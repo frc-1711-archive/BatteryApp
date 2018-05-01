@@ -7,16 +7,64 @@
 </head>
 
 <body> 
-  <div class = "header">
-    <h1>Battery App </h1>   
-    <button type = "button"><a href="index.html">  Home </a></button>
-    <button type = "button"><a href="Batteries.html"> linky boi </a></button>
-  </div>
-  <div class = "BatteryContainers"> 
-    <h2> Batteries </h2> 
-    <input type = "text" id = "BatteryInput" placeholder = "BatteryNames">
-    <span onclick = "newElement()" class = "addBtn"> Add </span>
-    <ul id = "BatteryUL">
-    </ul>
-  </div>
+    <div class = "header">
+    	<h1>Battery App </h1>   
+    	<button type = "button"><a href="index.html">  Home </a></button>
+    	<button type = "button"><a href="Batteries.html"> linky boi </a></button>
+    </div>
+    <div class = "BatteryContainers"> 
+	<h2> Batteries </h2> 
+	<input type = "text" id = "BatteryInput" placeholder = "BatteryNames">
+	<span onclick = "newElement()" class = "addBtn"> Add </span>
+	<ul id = "BatteryUL">
+	</ul>
+    </div>
+  <script> 
+	  //we put our script tags in the html like really lazy programmers hell yeah
+	  //this code does some fancy delete-y stuff (don't click the x unless you want the battery to disappear!)
+	  var batteryNodeList = document.getElementsByTagName("LI"); 
+	  var i;
+	  for (i = 0; i < myNodeList.length; i++) {
+		  var span = document.createElement("SPAN");
+		  var txt = document.createTextNode("\u00D7");
+		  span.className = "close";
+		  span.appendChild(txt);
+		  myNodelist[i].appendChild(span);
+	  }
+	  var close = document.getElementsByClassName("close");
+	  var i;
+	  for (i = 0; i < close.length; i++) {
+		 close[i].onclick = function() {
+			var div = this.parentElement;
+		 	div.style.display = "none";
+		}
+	 }
+	 
+	 //this adds things
+	  function newElement() {
+		  var li = document.createElement("li");
+		  var inputValue = document.getElementById("BatteryInput").value;
+		  var t = document.createTextNode(inputValue); 
+		  li.appendChild(t);
+		  if (inputValue === '') {
+			  alert("Please input a name"); 
+		  } else {
+			  document.getElementById("BatteryUL").appendChild(li);
+		  }
+		  document.getElementById("BatteryInput").value = "";
+		  
+		  var span = document.createElement("SPAN");
+		  var txt = document.createTextNode("\u00D7");
+		  span.className = "close"; 
+		  span.appendChild(txt);
+		  li.appendChild(span);
+		  
+		  for (i=0; i < close.length; i++) {
+			  close[i].onclick = function() {
+				  var div = this.parentElement;
+				  div.style.display = "none";
+			  }
+		  }
+	  }
+	</script>
 </body>
