@@ -4,7 +4,7 @@ h1 {
   font-size: 250%;
 }
 h2 {
- /* color: #669F4D;*/
+  color: #669F4D;
   font-family: Arial, Helvetica, sans-serif; 
 }
 h3 {
@@ -13,8 +13,8 @@ h3 {
   font-weight: lighter;
 }
 p {
-	color: #ffffff; 
-	font-family: Arial, Helvetica, sans-serif; 
+  color: #ffffff; 
+  font-family: Arial, Helvetica, sans-serif; 
 }
 ul li {
 	cursor: pointer; 
@@ -43,15 +43,13 @@ a {
 a:visited {
   color: #666666;
 }
-.addBtn {
+/*.addBtn {
   background: #eeeeee;
   font-color: #666666;
   cursor: pointer;
   border-radius:8px;
-  height: 50px;
-  width: 100px;
   font-size: 15px;
   color: #eeeeee;
   border: none;
   margin: 5px;
-}
+}*/
