@@ -20,7 +20,7 @@ ul li {
   cursor: pointer; 
   background: #eeeeee;
   font-size: 18px; 
-  width: 30px;
+  width: auto;
 }
 body {
   margin: 2em;
