@@ -21,26 +21,7 @@
 	</ul>
     </div>
   <script> 
-	  //we put our script tags in the html like really lazy programmers hell yeah
-	  //this code does some fancy delete-y stuff (don't click the x unless you want the battery to disappear!)
-	  var batteryNodeList = document.getElementsByTagName("LI"); 
-	  var i;
-	  for (i = 0; i < myNodeList.length; i++) {
-		  var span = document.createElement("SPAN");
-		  var txt = document.createTextNode("\u00D7");
-		  span.className = "close";
-		  span.appendChild(txt);
-		  myNodelist[i].appendChild(span);
-	  }
-	  var close = document.getElementsByClassName("close");
-	  var i;
-	  for (i = 0; i < close.length; i++) {
-		 close[i].onclick = function() {
-			var div = this.parentElement;
-		 	div.style.display = "none";
-		}
-	 }
-	 
+	  //we put our script tags in the html like really lazy programmers hell yeah 
 	 //this adds things
 	  function newElement() {
 		  var li = document.createElement("li");
