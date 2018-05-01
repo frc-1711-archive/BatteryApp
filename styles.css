@@ -10,4 +10,23 @@ h2, h3 {
 }
 body {
   margin: 2em;
+  background-image: url(http://i65.tinypic.com/34dosit_th.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color:#666666;
+}
+button {
+	border-radius:8px;
+	height: 30px;
+	font-size: 15px;
+	color: #eeeeee;
+	border: none;
+	margin: 5px;
+}
+a {
+	text-decoration: none;
+}
+a:visited {
+	color: #666666;
 }
