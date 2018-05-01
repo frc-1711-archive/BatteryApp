@@ -17,10 +17,10 @@ p {
   font-family: Arial, Helvetica, sans-serif; 
 }
 ul li {
-	cursor: pointer; 
-	background: #eeeeee;
-	font-size: 18px; 
-	width: 30px;
+  cursor: pointer; 
+  background: #eeeeee;
+  font-size: 18px; 
+  width: 30px;
 }
 body {
   margin: 2em;
