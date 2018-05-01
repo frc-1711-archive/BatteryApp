@@ -18,7 +18,7 @@ p {
 }
 ul li {
 	cursor: pointer; 
-	background: #eeeeee;
+	/*background: #eeeeee;*/
 	font-size: 18px; 
 }
 body {
