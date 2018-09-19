@@ -2,50 +2,55 @@
 <html>
 <head> 
   <title>Batteries</title>
-	<meta charset = "utf-8"/>
-	<link rel = "stylesheet" type = "text/css" href = "styles.css">
+    <meta charset = "utf-8"/>
+    <link rel = "stylesheet" type = "text/css" href = "styles.css">
 </head>
 
 <body> 
     <div class = "header">
-    	<h1>Battery App </h1>   
-    	<button type = "button"><a href="index.html">  Home </a></button>
-    	<button type = "button"><a href="Batteries.html"> Batteries </a></button>
+        <h1>Battery App </h1>   
+        <button type = "button"><a href="index.html">  Home </a></button>
+        <button type = "button"><a href="Batteries.html"> Batteries </a></button>
     </div>
     <div class = "BatteryContainers"> 
-	<h2> Batteries </h2> 
-	<p>Battery name: </p> 
+    <h2> Batteries </h2> 
+    <p>Battery name: </p> 
         <input type = "text" id = "BatteryInput" placeholder = "Name">
-	    <button><span onclick = "newElement()" class = "addBtn"> Add </span></button>
-	<ul id = "BatteryUL">
-	</ul>
+        <button><span onclick = "newElement()" class = "addBtn"> Add </span></button>
+    <ul id = "BatteryUL">
+    </ul>
     </div>
   <script> 
-	  //we put our script tags in the html like really lazy programmers hell yeah 
-	 //this adds things
-	  function newElement() {
-		  var li = document.createElement("li");
-		  var inputValue = document.getElementById("BatteryInput").value;
-		  var t = document.createTextNode(inputValue); 
-		  li.appendChild(t);
-		  if (inputValue === '') {
-			  alert("Please input a name"); 
-		  } else {
-			  document.getElementById("BatteryUL").appendChild(li);
-		  }
-		  document.getElementById("BatteryInput").value = "";
-		  
-		  var span = document.createElement("SPAN");
-		  span.className = "close"; 
-		  span.appendChild(txt);
-		  li.appendChild(span);
-		  
-		  for (i=0; i < close.length; i++) {
-			  close[i].onclick = function() {
-				  var div = this.parentElement;
-				  div.style.display = "none";
-			  }
-		  }
-	  }
-	</script>
+      //we put our script tags in the html like really lazy programmers hell yeah 
+     //this adds things
+     num = 0;
+      function newElement() {
+          var id = "battery";
+          id = id + "-" + num; 
+          num = num+1;
+          var li = document.createElement("li");
+          var inputValue = document.getElementById("BatteryInput").value;
+          var t = document.createTextNode(inputValue); 
+          li.setAttribute("id", id);
+          li.appendChild(t);
+          if (inputValue === '') {
+              alert("Please input a name"); 
+          } else {
+              document.getElementById("BatteryUL").appendChild(li);
+          }
+          document.getElementById("BatteryInput").value = "";
+          
+          var span = document.createElement("SPAN");
+          span.className = "battery"; 
+          span.appendChild(txt);
+          li.appendChild(span);
+          
+          for (i=0; i < close.length; i++) {
+              close[i].onclick = function() {
+                  var div = this.parentElement;
+                  div.style.display = "none";
+              }
+          }
+      }
+    </script>
 </body>

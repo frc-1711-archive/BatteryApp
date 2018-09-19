@@ -1,48 +1,73 @@
+.addBtn {
+	font-color:#666666;
+}
+.collectedData {
+	background: #eeeeee;
+	font-size: 18px;
+	color: #000000;
+	width: 15%;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+}
+.theBox { 
+	top: 0;
+	left: 0;
+	height: 20px;
+	width: 25px;
+	background-color: #eee;
+	display: inline;
+}
+.editBoxes {
+	font-size: 20px;
+}
 h1 {
-  color: #669F4D;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+	color: #669F4D;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 400%;
 }
 h2 {
-  color: #669F4D;
-  font-family: Arial, Helvetica, sans-serif; 
+	color: #669F4D;
+	font-family: Arial, Helvetica, sans-serif; 
 }
 h3 {
-  color: #DC7446;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+	color: #DC7446;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: lighter;
 }
 p {
-  color: #ffffff; 
-  font-family: Arial, Helvetica, sans-serif; 
+	color: #ffffff; 
+	font-family: Arial, Helvetica, sans-serif; 
+	font-size: 120%;
 }
 ul li {
-  cursor: pointer; 
-  background: #eeeeee;
-  font-size: 18px; 
-  width: auto;
-}
+	cursor: pointer; 
+	background: #eeeeee;
+	font-size: 18px; 
+	width: 15%;
+	list-style-type: none;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px;
+ }
 body {
-  margin: 2em;
-  background-image: url(http://i65.tinypic.com/34dosit_th.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-color:#666666;
+	margin: 2em;
+	background-image: url(http://i65.tinypic.com/34dosit_th.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-color:#666666;
 }
 button {
-  border-radius:8px;
-  height: 30px;
-  font-size: 15px;
-  border: none;
-  margin: 5px;
+	border-radius:8px;
+	height: 30px;
+	font-size: 15px;
+	border: none;
+	margin: 5px;
 }
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 a:visited {
-  color: #666666;
-}
-.addBtn {
-  font-color:#666666;
+	color: #666666;
 }
