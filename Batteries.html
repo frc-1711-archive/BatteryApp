@@ -9,48 +9,44 @@
 <body> 
     <div class = "header">
         <h1>Battery App </h1>   
-        <button type = "button"><a href="index.html">  Home </a></button>
-        <button type = "button"><a href="Batteries.html"> Batteries </a></button>
+        <a href="index.html"><button type = "button"> Home </button></a>
+        <a href="Batteries.html"><button type = "button"> Batteries </button></a>
     </div>
     <div class = "BatteryContainers"> 
     <h2> Batteries </h2> 
     <p>Battery name: </p> 
         <input type = "text" id = "BatteryInput" placeholder = "Name">
-        <button><span onclick = "newElement()" class = "addBtn"> Add </span></button>
+        <button onclick = "newElement()" class = "addBtn"><span> Add </span></button>
     <ul id = "BatteryUL">
     </ul>
+	<button onclick = "clearAllBatteries()">Clear Batteries</button>
     </div>
-  <script> 
-      //we put our script tags in the html like really lazy programmers hell yeah 
-     //this adds things
-     num = 0;
-      function newElement() {
-          var id = "battery";
-          id = id + "-" + num; 
-          num = num+1;
-          var li = document.createElement("li");
-          var inputValue = document.getElementById("BatteryInput").value;
-          var t = document.createTextNode(inputValue); 
-          li.setAttribute("id", id);
-          li.appendChild(t);
-          if (inputValue === '') {
-              alert("Please input a name"); 
-          } else {
-              document.getElementById("BatteryUL").appendChild(li);
-          }
-          document.getElementById("BatteryInput").value = "";
-          
-          var span = document.createElement("SPAN");
-          span.className = "battery"; 
-          span.appendChild(txt);
-          li.appendChild(span);
-          
-          for (i=0; i < close.length; i++) {
-              close[i].onclick = function() {
-                  var div = this.parentElement;
-                  div.style.display = "none";
-              }
-          }
-      }
-    </script>
+	<div id = "BatteryInfo">
+		<input type="text" id="batteryName" value="" placeholder="Battery Name" disabled style="margin-top:5px;margin-left:5px;">
+		<div class="InfoText" style="margin-left:5px;">
+			Battery Charge:<input type="number" id="batteryPercent" value="130" min="0" max="130" disabled style="margin-left:5px;width:35px;">%<br>
+			Battery Condition:
+			<select id = "batteryCondition" disabled>
+				<option value="good">Good</option>
+				<option value="fair">Fair</option>
+				<option value="bad">Bad</option>
+			</select><br>
+			Battery Location:
+			<select id = "batteryLocation" disabled>
+				<option value="charging">Charging</option>
+				<option value="notCharging">Not Charging</option>
+				<option value="onRobot">On Robot</option>
+				<option value="inUse">Other</option>
+			</select><br>
+			Logged By:
+			<input type="text" id="batteryHandler" value="" placeholder="Logged By" disabled style="width:120px;"><br>
+			Logged at <span id="batteryUpdated">00:00:00 on 1/1/1970</span><br>
+			Comments:
+			<textarea id="batteryComments" disabled></textarea>
+		</div>
+			
+		<button onclick="batteryList[batteryOpened].save()">Save</button>
+		<button onclick="batteryList[batteryOpened].delete()">Delete</button>
+	</div>
+  <script src=".\batteriesJS.js"><!--Moved script to an outside file--></script>
 </body>
