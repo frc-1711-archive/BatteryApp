@@ -126,12 +126,12 @@ Battery.prototype.save = function(){
 	if(document.getElementById("batteryHandler").value === "" || document.getElementById("batteryName").value === "" || document.getElementById("batteryHandler").value === "anonymous"){
 		window.alert("Please make sure the battery is named and you identify yourself!");
 	}else{
-		this.name = document.getElementById("batteryName").value;
+		this.name = document.getElementById("batteryName").value.replace(/§/g,"S").replace(/¶/g,"P");
 		this.condition = document.getElementById("batteryCondition").value;
 		this.percent = document.getElementById("batteryPercent").value;
 		this.location = document.getElementById("batteryLocation").value;
-		this.comments = document.getElementById("batteryComments").value;
-		this.handler = document.getElementById("batteryHandler").value;
+		this.comments = document.getElementById("batteryComments").value.replace(/§/g,"S").replace(/¶/g,"P");
+		this.handler = document.getElementById("batteryHandler").value.replace(/§/g,"S").replace(/¶/g,"P");
 		var date = new Date();
 		this.updated = currentTime();
 		document.getElementById("batteryUpdated").innerHTML = this.updated;
@@ -165,7 +165,7 @@ function newElement() {
 	var currentBattery = batteryList.push(
 		document.getElementById("BatteryInput").value === "" ?
 			new Battery(batteryList.length,"Battery-" + batteryList.length,"good",130,"notCharging","","anonymous",currentTime()) :
-			new Battery(batteryList.length,document.getElementById("BatteryInput").value,"good",130,"notCharging","","anonymous",currentTime())
+			new Battery(batteryList.length,document.getElementById("BatteryInput").value.replace(/§/g,"S").replace(/¶/g,"P"),"good",130,"notCharging","","anonymous",currentTime())
 	) - 1;
 	
 	batteryList[currentBattery].display();
