@@ -12,7 +12,7 @@ function Battery(id,name,condition,percent,location,comments,handler,updated){
 }
 
 function unpackBatteries(){
-	return localStorage.batteryList.split(",").map(function(battery){return new Battery(battery.split("`")[0],battery.split("`")[1],battery.split("`")[2],battery.split("`")[3],battery.split("`")[4],battery.split("`")[5],battery.split("`")[6],battery.split("`")[7])/**/;},this);
+	return localStorage.batteryList.split("¶").map(function(battery){return new Battery(battery.split("§")[0],battery.split("§")[1],battery.split("§")[2],battery.split("§")[3],battery.split("§")[4],battery.split("§")[5],battery.split("§")[6],battery.split("§")[7])/**/;},this);
 }
 
 function twoPlace(number){
@@ -54,8 +54,19 @@ batteryList[-1] = {
 
 var batteryOpened = -1;
 
-function packBatteries(battery){
-	return [battery.id,battery.name,battery.condition,battery.percent,battery.location,battery.comments,battery.handler,battery.updated].toString().replace(/,/g,"`");
+function packBattery(battery){
+	return battery.id + "§" + battery.name + "§" + battery.condition + "§" + battery.percent + "§" + battery.location + "§" + battery.comments + "§" + battery.handler + "§" + battery.updated;
+}
+
+function packAllBatteries(){
+	var packedBatteries = "";
+	for(var i = 0 ; i < batteryList.length ; i++){
+		packedBatteries += packBattery(batteryList[i]);
+		if(i !== batteryList.length - 1){
+			packedBatteries += "¶" ;
+		}
+	}
+	return packedBatteries;
 }
 
 Battery.prototype.display = function(){
@@ -124,7 +135,7 @@ Battery.prototype.save = function(){
 		var date = new Date();
 		this.updated = currentTime();
 		document.getElementById("batteryUpdated").innerHTML = this.updated;
-		localStorage.batteryList = batteryList.map(packBatteries,this).toString();
+		localStorage.batteryList = packAllBatteries();
 		updateBatteryDisplay();
 	}
 }
@@ -135,7 +146,7 @@ Battery.prototype.delete = function(){
 			batteryList[i].id--;
 		}
 		batteryList.splice(this.id+1,1);
-		localstorage = localStorage.batteryList = batteryList.map(packBatteries,this).toString();
+		localStorage.batteryList = packAllBatteries();
 		updateBatteryDisplay();
 		clearInfo();
 	}
@@ -161,7 +172,7 @@ function newElement() {
 	
 	document.getElementById("BatteryInput").value = "";
 
-	localStorage.batteryList = batteryList.map(packBatteries,this).toString();
+	localStorage.batteryList = packAllBatteries();
 }
 
 function clearAllBatteries(){
